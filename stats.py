@@ -35,4 +35,4 @@ def words_frequency(text):
         else:
             words_dict[word] = 1
 
-    return dict(sorted(words_dict.items(), key=lambda item: item[1], reverse=True))
+    return dict(words_dict.items())

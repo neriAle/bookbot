@@ -1,4 +1,4 @@
-from stats import word_count, char_count, sort_dictionaries
+from stats import word_count, char_count, sort_dictionaries, words_frequency
 import sys
 
 def get_book_text(path):
@@ -25,6 +25,12 @@ def main():
     for dict in sorted_dicts:
         if dict["char"].isalpha():
             print(str(dict["char"]) + ":", dict["num"])
+
+    words_dict = words_frequency(book_text)
+    sorted_word_dicts = sort_dictionaries(words_dict)
+    print("--------- Word Frequency -------")
+    for dict in sorted_word_dicts[:31]:
+        print(str(dict["char"]) + ":", dict["num"])
 
     print("============= END ===============")
 
